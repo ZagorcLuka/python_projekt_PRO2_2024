@@ -10,7 +10,7 @@ def stat(file):
     drzave = []
     leta = list(range(1990,2023)) 
     file = open(f"{file}","r")
-    plt.figure(figsize = [15,15]) #format grafa
+    
     
     #grupa 1: TOTX4_MEMONIA - total, 
     #excluding LULUCF and memo items, including international aviation
@@ -53,8 +53,11 @@ def stat(file):
                     stevila.append(float(st))
             info_II.append(stevila)
      
+    #grupa 1
+    
     explode=[]
     n = 0 
+    plt.figure(figsize = [15,15]) #format grafa
     povprecje_I = []
     for drzava in info_I:
         povp = sum(drzava)/len(drzava) #izračunamo povprečje izpusta drzave med 1990-2022 za 2 grupo
@@ -67,7 +70,8 @@ def stat(file):
             plt.plot(leta, drzava, label = f"{drzave[n]}")
             n += 1
             explode.append(0) #za tortni diagram 
-        
+    
+    n = 0    
     plt.yticks(range(0,50,4))
     plt.xlabel("LETA")
     plt.ylabel("TONNES PER CAPITA")
@@ -75,8 +79,10 @@ def stat(file):
     plt.legend()
     plt.show()
     
+    #grupa 2
+    
     plt.figure(figsize = [15,15]) #format grafa
-    n = 0
+    
     povprecje_II = []
     for drzava in info_II:
         povp = sum(drzava)/len(drzava) #izračunamo povprečje izpusta drzave med 1990-2022 za 2 grupo
@@ -87,10 +93,8 @@ def stat(file):
         else:
             plt.plot(leta, drzava, label = f"{drzave[n]}")
             n += 1
-        
+    
     n = 0
-    
-    
     plt.yticks(range(0,50,4))
     plt.xlabel("LETA")
     plt.ylabel("TONNES PER CAPITA")
@@ -126,7 +130,7 @@ def stat(file):
     delez_I = []
     n = 0
     for st in povprecje_I:
-        r = round(((100 * st) / sum(povprecje_I)),2)
+        r = round(((100 * st) / sum(povprecje_I)),2) 
         delez_I.append(f"{drzave[n]} {r}%")
         n += 1
     
@@ -158,7 +162,7 @@ def stat(file):
     
     plt.figure(figsize = [15,15])
     
-    skupaj_letno_I = [round(sum(st)/len(info_I),2) for st in zip(*info_I)] #izra
+    skupaj_letno_I = [round(sum(st)/len(info_I),2) for st in zip(*info_I)] #izračun povprečja 
     skupaj_letno_II = [round(sum(st)/len(info_II),2) for st in zip(*info_II)]
     
     #grupa 1
