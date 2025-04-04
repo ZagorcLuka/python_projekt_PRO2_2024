@@ -6,4 +6,4 @@ ANALIZA PODATKOV O IZPUSTU TOPLOGREDNIH PLINOV DRŽAV V EU
 
 vir podatkov : https://ec.europa.eu/eurostat/web/environment/database
 
-predstavitev : https://youtu.be/C268bGyxvDU
+predstavitev : https://youtu.be/1lwvslt25X8
